@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "${{ values.name }}"
+  description: "${{ values.name }} for Red Hat Developer Hub"
+  annotations:
+    github.com/project-slug: "ocp-rhdh-poc/${{ values.name }}"
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: "${{ values.namespace }}"
+    backstage.io/kubernetes-id: "${{ values.name }}"
+    janus-idp.io/tekton: "${{ values.name }}" 
+    argocd/app-selector: "app.kubernetes.io/instance=${{ values.name }}-bootstrap" 
+  links:
+    - title: Documentation
+      url: "https://github.com/ocp-rhdh-poc/${{ values.name }}"
+    - url: "https://devspaces.apps.67c1045bd8856f9bb04f2985.am1.techzone.ibm.com/#https://github.com/ocp-rhdh-poc/${{ values.name }}"
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+    - url: "https://ibmdevsandbox-instanaibm.instana.io/#/application;appId=${{ values.instanalink }}"
+      title: Instana Monitoring
+      icon: web
+  tags:
+    - react
+    - argocd
+    - buildconfig
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/rhdh"

@@ -16,7 +16,7 @@ metadata:
     - url: "https://devspaces.apps.67c1045bd8856f9bb04f2985.am1.techzone.ibm.com/#https://github.com/ocp-rhdh-poc/${{ values.name }}"
       title: OpenShift Dev Spaces (VS Code)
       icon: web
-    - url: "https://ibmdevsandbox-instanaibm.instana.io/#/application;appId=${{ values.instanalink }}"
+    - url: "https://ibmdevsandbox-instanaibm.instana.io/#/application;appId=${{ values.instanalink }}/summary;callsTab=http;latencyTab=overTime"
       title: Instana Monitoring
       icon: web
   tags:
